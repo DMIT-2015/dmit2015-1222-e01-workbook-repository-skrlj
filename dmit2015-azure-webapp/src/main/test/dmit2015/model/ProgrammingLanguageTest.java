@@ -1,8 +1,9 @@
 package dmit2015.model;
 
-import org.junit.jupiter.api.*; //for @Test and Assertions class
+import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*; //for assertEquals()
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class ProgrammingLanguageTest {
     @Test // 2^3 should be 8
