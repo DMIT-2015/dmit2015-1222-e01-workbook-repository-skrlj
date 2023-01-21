@@ -1,8 +1,21 @@
 package dmit2015.model;
 
+/**
+ * This class models a Circle shape.
+ *
+ * @author James Skrlj
+ * @version 2023-01-20
+ */
 public class Circle {
+    /**
+     * The raidus of this circle.
+     */
     private double radius;
 
+    /**
+     * Returns the radius of this circle
+     * @return the radius of this circle
+     */
     public double getRadius() {
         return radius;
     }
@@ -18,6 +31,11 @@ public class Circle {
     //    }
 
     // RuntimeException example
+
+    /**
+     * Change the radius of the circle
+     * @param radius the new radius of the circle
+     */
     public void setRadius(double radius) {
         // Validate the new value assigned to the Radius
         if (radius <= 0) {
@@ -26,26 +44,50 @@ public class Circle {
         this.radius = radius;
     }
 
+    /**
+     * Creates a circle with a radius of 1
+     */
     public Circle() {
         this.radius = 1;
     }
 
+    /**
+     * Circle with a specific radius
+     * @param radius the new radius of this circle
+     */
     public Circle(double radius) {
         this.radius = radius;
     }
 
+    /**
+     * Compute and return the area of this circle
+     * @return the area of this circle
+     */
     public double area() {
         return Math.PI * radius * radius;
     }
 
+    /**
+     * Compute and return the diameter of this circle.
+     * @return the diameter of this circle
+     */
     public double diameter() {
         return 2 * radius;
     }
 
+    /**
+     * Compute and return the circumference of this cirlce
+     * @return the circumference of this circle
+     */
     public double circumference() {
         return 2 * Math.PI * radius;
     }
 
+    /**
+     * Console application to demonstrate usage of Circle object
+     * @param args
+     * @throws Exception
+     */
     public static void main(String[] args) throws Exception {
         Circle circle1 = new Circle();
         // The radius of circle1 should be 1,
