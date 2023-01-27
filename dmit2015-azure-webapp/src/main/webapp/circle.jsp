@@ -41,6 +41,7 @@ Add to pom.xml the following the Maven dependencies to rid of the runtime errors
         <jsp:setProperty name="formBean" property="*"/>
     </jsp:useBean>
 
+
     <form id="form1" method="post">
 
         <div class="form-group">
