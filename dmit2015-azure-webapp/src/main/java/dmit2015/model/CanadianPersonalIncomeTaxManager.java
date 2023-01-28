@@ -4,13 +4,12 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.ArrayList;
 import java.util.List;
 
 public class CanadianPersonalIncomeTaxManager {
 
     public List<String> readAllLinesFromCsvFile(String filePathString) {
-        List<String> allLines = new ArrayList<String>();
+        List<String> allLines;
 
         try {
             Path csvPath = Path.of(Thread
