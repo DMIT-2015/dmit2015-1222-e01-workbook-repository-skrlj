@@ -10,7 +10,7 @@ import java.util.List;
 public class CanadianPersonalIncomeTaxManager {
 
     public List<String> readAllLinesFromCsvFile(String filePathString) {
-        List<String> allLines = new ArrayList<>();
+        List<String> allLines = new ArrayList<String>();
 
         try {
             Path csvPath = Path.of(Thread
@@ -21,27 +21,25 @@ public class CanadianPersonalIncomeTaxManager {
             allLines = Files.readAllLines(csvPath);
             allLines = allLines.stream().skip(1).toList();
 
-        } catch (URISyntaxException e) {
-            throw new RuntimeException(e);
-        } catch (IOException e) {
+        } catch (URISyntaxException | IOException e) {
             throw new RuntimeException(e);
         }
         return allLines;
     }
 
-    public static void main(String[] args) {
-        try {
-            Path csvPath = Path.of(Thread.currentThread().getContextClassLoader().getResource("data/CanadianPersonalIncomeTaxRates.csv").toURI());
-            // Use the `Files.readAllLines()` method to read all lines from a file as a List.
-            System.out.println("I am reading all the lines from the csv file into a list of String.");
-            List allLines = Files.readAllLines(csvPath);
-            System.out.println("I am printing each line read from the list.");
-            allLines.forEach(System.out::println);
-            System.out.println("\n\n");
-
-
-        } catch (URISyntaxException | IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
+//    public static void main(String[] args) {
+//        try {
+//            Path csvPath = Path.of(Thread.currentThread().getContextClassLoader().getResource("data/CanadianPersonalIncomeTaxRates.csv").toURI());
+//            // Use the `Files.readAllLines()` method to read all lines from a file as a List.
+//            System.out.println("I am reading all the lines from the csv file into a list of String.");
+//            List allLines = Files.readAllLines(csvPath);
+//            System.out.println("I am printing each line read from the list.");
+//            allLines.forEach(System.out::println);
+//            System.out.println("\n\n");
+//
+//
+//        } catch (URISyntaxException | IOException e) {
+//            throw new RuntimeException(e);
+//        }
+//    }
 }
