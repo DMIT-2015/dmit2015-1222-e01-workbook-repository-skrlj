@@ -2,48 +2,58 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:faces="jakarta.faces"
+      xmlns:ui="jakarta.faces.facelets"
+      xmlns:f="jakarta.faces.core"
+      xmlns:h="jakarta.faces.html"
       xmlns:p="http://primefaces.org/ui">
-<f:view>
 
-   <h1>Prime Faces Scope Counter</h1>
+<h:head>
 
-   <h:messages id="messages" />
-   <h:outputText id="counterResult" />
+   <title>Scope Counter - PrimeFaces version</title>
 
-   <h:form id="requestScopeForm">
-      <p:commandButton value="Increment RequestScope Counter"
-                       action="#{requestScopeCounterController.submit}"
-                       update=":messages :counterResult"
-      >
-      </p:commandButton>
-   </h:form>
+   <h:outputStylesheet library="webjars" name="primeflex/3.3.0/primeflex.min.css"/>
+   <h:outputStylesheet library="webjars" name="primeflex/3.3.0/themes/saga-blue.css"/>
+</h:head>
 
-   <h:form id="viewScopeForm">
-      <p:commandButton value="Increment ViewScope Counter"
-                       action="#{viewScopeCounterController.submit}"
-                       update=":messages :counterResult"
-      >
-      </p:commandButton>
-   </h:form>
+<h:body>
 
-   <h:form id="sessionScopeForm">
-      <p:commandButton value="Increment SessionScope Counter"
-                       action="#{sessionScopeCounterController.submit}"
-                       update=":messages :counterResult"
-      >
-      </p:commandButton>
-   </h:form>
+   <h1>Scope Counter - PrimeFaces version</h1>
 
-   <h:form id="applicationScopeForm">
-      <p:commandButton value="Increment ApplicationScope Counter"
-                       action="#{applicationScopeCounterController.submit}"
-                       update=":messages :counterResult"
-      >
-      </p:commandButton>
-   </h:form>
+   <p:messages id="messages"/>
+   <h:outputText id="counterResult"/>
 
-</f:view>
+   <div class="formgroup-inline">
+      <h:form id="requestScopeForm"  class="field">
+         <p:commandButton value="Increment RequestScope Counter"
+                          action="#{requestScopeCounterController.submit}"
+                          update=":messages :counterResult"
+         >
+         </p:commandButton>
+      </h:form>
+
+      <h:form id="viewScopeForm"  class="field">
+         <p:commandButton value="Increment ViewScope Counter"
+                          action="#{viewScopeCounterController.submit}"
+                          update=":messages :counterResult"
+         >
+         </p:commandButton>
+      </h:form>
+
+      <h:form id="sessionScopeForm" class="field">
+         <p:commandButton value="Increment SessionScope Counter"
+                          action="#{sessionScopeCounterController.submit}"
+                          update=":messages :counterResult">
+         </p:commandButton>
+      </h:form>
+
+      <h:form id="applicationScopeForm" class="field">
+         <p:commandButton value="Increment ApplicationScope Counter"
+                          action="#{applicationScopeCounterController.submit}"
+                          update=":messages :counterResult">
+         </p:commandButton>
+      </h:form>
+   </div>
+</h:body>
+
 </html>
