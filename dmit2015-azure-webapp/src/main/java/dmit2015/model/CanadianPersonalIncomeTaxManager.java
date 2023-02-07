@@ -25,7 +25,6 @@ public class CanadianPersonalIncomeTaxManager {
         }
         return allLines;
     }
-
 //    public static void main(String[] args) {
 //        try {
 //            Path csvPath = Path.of(Thread.currentThread().getContextClassLoader().getResource("data/CanadianPersonalIncomeTaxRates.csv").toURI());
