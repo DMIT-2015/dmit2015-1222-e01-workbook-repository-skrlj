@@ -79,7 +79,7 @@ public class Movie implements Serializable {
         /**
          * The order of the columns are:
          * 0 - title
-         * 1 - releaseDate
+         * 1 - releaseDates
          * 2 - genre
          * 3 - price
          * 4 - rating
