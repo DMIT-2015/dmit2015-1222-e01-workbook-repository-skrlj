@@ -42,14 +42,14 @@ public class Movie implements Serializable {
     @Column(nullable = false, length = 30)
     @NotBlank(message = "The field Genre is required.")
     @Pattern(regexp = "^[A-Z]+[a-zA-Z\\s]*$",  // Must only use letters.
-                                            // The first letter is required to be uppercase. White space, numbers, and special characters are not allowed.
+            // The first letter is required to be uppercase. White space, numbers, and special characters are not allowed.
             message = "The field Genre must match the regular expression '^[A-Z]+[a-zA-Z\\s]*$'.")
     private String genre;
 
     @Column(nullable = false, length = 5)
     @NotBlank(message = "The field Rating is required.")
     @Pattern(regexp = "^[A-Z]+[a-zA-Z0-9\"\"'\\s-]*$", // The first character can be an uppercase letter
-                                                        // Allows special characters and numbers in subsequent spaces. PG-13 is valid but fails for a Genre
+            // Allows special characters and numbers in subsequent spaces. PG-13 is valid but fails for a Genre
             message = "The field Rating must match the regular expression '^[A-Z]+[a-zA-Z0-9\"\"'\\s-]*$'.")
     private String rating;      // G, PG, PG-13, R, NC-17
 
@@ -79,7 +79,7 @@ public class Movie implements Serializable {
         /**
          * The order of the columns are:
          * 0 - title
-         * 1 - releaseDates
+         * 1 - releaseDate
          * 2 - genre
          * 3 - price
          * 4 - rating
